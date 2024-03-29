@@ -1,5 +1,6 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./app/**/*.{gjs,gts,hbs,html,js,ts}'],
   theme: {
     extend: {},
