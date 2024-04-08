@@ -1,0 +1,40 @@
+<shop class="flex flex-col justify-center text-center" ...attributes>
+  <div
+    class="topIMG flex flex-grow w-full min-h-48 relative justify-center text-white"
+  >
+    {{! <img
+      id="contentImage"
+      src="/assets/images/DescriptionImage.png"
+      alt="Description Image"
+    /> }}
+    <h1 class="absolute top-[50%]">Paragraph 2</h1>
+  </div>
+  <a href="/lookbook">
+    Summer 2021 is made to get the people going.<br />
+    Be provocative in your own way!
+    <p>free shipping in austria on all orders over 75€</p>
+  </a>
+  <div class="mx-48 grid grid-cols-2 gap-2">
+    {{#each this.products as |product|}}
+      <button  {{on 'click' (fn this.productClick product.id)}}>
+        <div class="mx-auto">
+          <img
+            class="bg-gray-200 w-96 h-96"
+            id="{{product.name}}_img"
+            src="{{product.image}}"
+            alt="Failed"
+          />
+          <div class="flex">
+            <div class="flex flex-col text-left">
+              <h3>{{product.name}}</h3>
+              <h4>{{product.color}}</h4>
+            </div>
+            <h3 class="ml-auto">{{product.price}}</h3>
+          </div>
+        </div>
+      </button>
+    {{/each}}
+  </div>
+
+</shop>
+{{yield}}
