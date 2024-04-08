@@ -16,7 +16,7 @@
   </a>
   <div class="mx-48 grid grid-cols-2 gap-2">
     {{#each this.products as |product|}}
-      <button  {{on 'click' (fn this.productClick product.id)}}>
+      <button  type="button" {{on 'click' (fn this.productClick product.id)}}>
         <div class="mx-auto">
           <img
             class="bg-gray-200 w-96 h-96"
@@ -26,10 +26,10 @@
           />
           <div class="flex">
             <div class="flex flex-col text-left">
-              <h3>{{product.name}}</h3>
-              <h4>{{product.color}}</h4>
+              <span>{{product.name}}</span>
+              <span>{{product.color}}</span>
             </div>
-            <h3 class="ml-auto">{{product.price}}</h3>
+            <span class="ml-auto">{{product.price}}</span>
           </div>
         </div>
       </button>
